@@ -13,3 +13,5 @@ Quick overview
 Prerequisites
 - JDK 8 or newer installed and on your PATH.
 - A Java-aware IDE (IntelliJ IDEA, Eclipse, VS Code) can run the main class directly.
+- A highenough SDK to support Switch Cases (11 prob)
+- A computer
