@@ -3,7 +3,6 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.*;
 
 public class PlayerEntity {
-   
     private final JPanel panel;
     public int x;
     public int dx = 0; // Change in x
@@ -12,11 +11,9 @@ public class PlayerEntity {
     public static int length = 225;
     public static int diameter = 50; // Diameter of the player circle
     public static int height = 104;
-  
 
     private final int speed = 4;
  
-
     private Dimension dimension;
     private final Image logo;
 
@@ -44,8 +41,13 @@ public class PlayerEntity {
 
         logo = ImageManager.loadImage("logo.png");
 
+        if (logo == null) {
+            System.err.println("Error: logo.png not found. Please ensure the image is in the correct directory.");
+        }
+
+         
+
     }
-       
 
     // Draw onto a provided Graphics2D (called from GamePanel.paintComponent)
     public void draw(Graphics2D g2) {
@@ -53,10 +55,7 @@ public class PlayerEntity {
         g2.drawImage(logo, x, y, length, height, panel);
     }
 
-    // Erase no longer needed; painting is handled by Swing's repaint cycle
 
-    
-   
     public void move() {
         if (!panel.isVisible()) return;
 
@@ -72,6 +71,7 @@ public class PlayerEntity {
         x += dx;
         y += dy;
 
+        
         // Position updated; actual drawing occurs in GamePanel.paintComponent via repaint()
     }
 

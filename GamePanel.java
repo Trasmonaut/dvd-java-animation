@@ -42,7 +42,7 @@ public class GamePanel extends JPanel {
 
 
     // ============================ LOOP ============================ //
-    /** Draw current state to the panel from the back buffer. */
+    // Draw current state to the panel from the back buffer. 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -80,13 +80,16 @@ public class GamePanel extends JPanel {
     public void pauseGame() {
         isRunning = false;
         repaint();
+        System.out.println("Game state has been switched to: " + (isRunning ? "Running" : "Paused"));
     }
 
     public void startStopGame() {
         if (!isStarted) {
             startGame();
+            System.out.println("Game started. Press Space to pause/resume, Escape to exit.");
         } else {
             isRunning = !isRunning;
+            System.out.println("Game state has been switched to: " + (isRunning ? "Running" : "Paused"));
         }
     }
 }

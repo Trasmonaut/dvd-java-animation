@@ -52,8 +52,6 @@ public class GameWindow extends JFrame {
         // Use true fullscreen (undecorated + exclusive full screen when supported)
         setUndecorated(true);
 
-        
-
         // Input listeners
         // Key input: handle Escape (exit) and Space (start)
         mainPanel.addKeyListener(new KeyAdapter() {
@@ -93,5 +91,5 @@ public class GameWindow extends JFrame {
             }
         });
     }
-    // No additional listener methods needed; we use adapters above.
+    
 }
